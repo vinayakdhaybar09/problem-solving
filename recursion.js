@@ -1,9 +1,23 @@
-// summ of all numbers in array
-const arr = [2,4,6,2,5,3]
-const sum = (n) =>{
-    console.log(n)
-    if(n === 0 ) return arr[n]
-    return arr[n] + sum(n - 1)
+
+
+
+// factorail
+
+const factorial = (n)=>{
+    if(n === 1) return 1
+    return n * factorial(n-1)
 }
 
-console.log(sum(arr.length - 1))
+console.log(factorial(50))
+
+
+// summ of all numbers in array
+
+// const arr = [2,4,6,2,5,3]
+// const sum = (n) =>{
+//     console.log(n)
+//     if(n === 0 ) return arr[n]
+//     return arr[n] + sum(n - 1)
+// }
+
+// console.log(sum(arr.length - 1))
