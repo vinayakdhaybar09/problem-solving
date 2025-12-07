@@ -1,14 +1,25 @@
 
+// isPowerOfTwo 
+
+// function isPowerOfTwo (n){
+//     if(n === 1) return true
+//     if(n%2 != 0 || n < 1)return false
+//     return isPowerOfTwo(n/2)
+// }
+
+// console.log(isPowerOfTwo(4))
 
 
-// factorail
 
-const factorial = (n)=>{
-    if(n === 1) return 1
-    return n * factorial(n-1)
-}
 
-console.log(factorial(50))
+// // factorail
+
+// const factorial = (n)=>{
+//     if(n === 1) return 1
+//     return n * factorial(n-1)
+// }
+
+// console.log(factorial(50))
 
 
 // summ of all numbers in array
