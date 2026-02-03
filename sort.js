@@ -57,26 +57,48 @@
 //------Lettcode 88 -----------------------------------------------------
 
 
-function mergeArr(nums1, m, nums2, n){
+// function mergeArr(nums1, m, nums2, n){
     
-    let p1 = m-1
-    let p2 = n-1
-    let k = nums1.length - 1
+//     let p1 = m-1
+//     let p2 = n-1
+//     let k = nums1.length - 1
     
-    while (p2 >= 0){
-        if(nums1[p1] > nums2[p2]){
-            nums1[k] = nums1[p1]
-            p1--
-        }else{
-            nums1[k] = nums2[p2]
-            p2--
+//     while (p2 >= 0){
+//         if(nums1[p1] > nums2[p2]){
+//             nums1[k] = nums1[p1]
+//             p1--
+//         }else{
+//             nums1[k] = nums2[p2]
+//             p2--
+//         }
+//         k--
+//     }
+    
+//     return nums1
+    
+// }
+
+
+// console.log(mergeArr([2,5,7,0,0,0], 3, [1, 3, 5], 3))
+
+
+
+// --------------35 — Search Insert Position (Where would this value go?)--------------
+
+function searchInsert(nums, target) {
+    let low = 0
+    let high = nums.length - 1
+
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2)
+
+        if (nums[mid] === target) return mid
+
+        if (target > nums[mid]) {
+            low = mid + 1
+        } else {
+            high = mid - 1
         }
-        k--
     }
-    
-    return nums1
-    
+    return low
 }
-
-
-console.log(mergeArr([2,5,7,0,0,0], 3, [1, 3, 5], 3))
