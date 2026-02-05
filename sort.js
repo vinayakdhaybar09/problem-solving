@@ -85,20 +85,67 @@
 
 // --------------35 — Search Insert Position (Where would this value go?)--------------
 
-function searchInsert(nums, target) {
-    let low = 0
-    let high = nums.length - 1
+// function searchInsert(nums, target) {
+//     let low = 0
+//     let high = nums.length - 1
 
-    while (low <= high) {
-        let mid = Math.floor((low + high) / 2)
+//     while (low <= high) {
+//         let mid = Math.floor((low + high) / 2)
 
-        if (nums[mid] === target) return mid
+//         if (nums[mid] === target) return mid
 
-        if (target > nums[mid]) {
-            low = mid + 1
-        } else {
-            high = mid - 1
+//         if (target > nums[mid]) {
+//             low = mid + 1
+//         } else {
+//             high = mid - 1
+//         }
+//     }
+//     return low
+// }
+
+
+
+
+//-------------------------278. First Bad Version----------------------------
+
+
+
+// /**
+//  * Definition for isBadVersion()
+//  * 
+//  * @param {integer} version number
+//  * @return {boolean} whether the version is bad
+//  * isBadVersion = function(version) {
+//  *     ...
+//  * };
+//  */
+
+// /**
+//  * @param {function} isBadVersion()
+//  * @return {function}
+//  */
+var solution = function(isBadVersion) {
+    /**
+     * @param {integer} n Total versions
+     * @return {integer} The first bad version
+     */
+    return function(n) { // [1, 2]
+
+        let low = 1;
+        let high = n;
+
+        while (low < high) {
+            let mid = Math.floor((low + high) / 2);
+
+            if (isBadVersion(mid)) {
+                high = mid;        // first bad is here or left
+            } else {
+                low = mid + 1;     // first bad is right
+            }
         }
-    }
-    return low
-}
+
+        return low; // or high (both same)
+    };
+};
+
+
