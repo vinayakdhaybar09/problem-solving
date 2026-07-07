@@ -1,25 +1,51 @@
+//************************** find word containing charechters **************************************
 
-//------------------- length of last word ---------------------------------
+const words = ["abc", "bcd", "aaa", "cbc"]      // o/p = [0, 1]
+const x = "a"
+
+const findWord = () => {
+
+    let indices = []
+
+    for (let i = 0; i < words.length; i++) {
+        for (let j = 0; j < words[i].length; j++) {
+            const word = words[i]
+            if (word[j] == x) {
+                indices[indices.length] = i
+                
+                break
+            }
+        }
+    }
+
+    console.log("indices", indices)
+
+}
+
+findWord()
+
+
+//**************************/ length of last word **************************************
 
 // "  hello there  how are you   "
 
 
 const text = "  hello o woghghjjrld   "
 
-const singleloop = ()=>{
+const singleloop = () => {
 
     let n = text.length - 1
     let count = 0
 
-    while(n>=0){
-        
-        if(count > 0 && text[n] == " ") {
+    while (n >= 0) {
+
+        if (count > 0 && text[n] == " ") {
             break
         }
-        if(text[n] == " "){
+        if (text[n] == " ") {
             n--
         }
-        if(text[n] != " "){
+        if (text[n] != " ") {
             count++
             n--
         }
@@ -30,7 +56,7 @@ const singleloop = ()=>{
 }
 
 
-singleloop()
+// singleloop()
 
 
 
@@ -38,16 +64,16 @@ singleloop()
 
 // ------------------------------------------------------------
 
-const loopWay = ()=>{
+const loopWay = () => {
 
     // find last word
 
     let n = text.length - 1
 
-    while(n>=0){
+    while (n >= 0) {
         if (text[n] == " ") {
             n--
-        }else{
+        } else {
             break
         }
     }
@@ -58,11 +84,11 @@ const loopWay = ()=>{
 
     let count = 0
 
-    while(n>=0){
-        if(text[n] != " "){
+    while (n >= 0) {
+        if (text[n] != " ") {
             count++
             n--
-        }else{
+        } else {
             break
         }
     }
@@ -77,10 +103,10 @@ const loopWay = ()=>{
 
 
 // ------------------------------------------------------------
-const easyway = ()=> {
+const easyway = () => {
     const trimtext = text.trim()
     const textarraylength = trimtext.split(" ")
-    const lastword = textarraylength[textarraylength.length-1]
+    const lastword = textarraylength[textarraylength.length - 1]
     const lastwordlength = lastword.length
     console.log("length", lastwordlength)
 
