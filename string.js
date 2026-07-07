@@ -1,3 +1,31 @@
+//************************** 771. jewels and stones **************************************
+
+const jewls = "aA"
+const stones = "aAAbbbb"
+
+const jewlsInAStone = ()=>{
+
+    let count = 0
+
+    for(let i = 0; i < stones.length; i++){
+        for(let j = 0; j < jewls.length; j++){
+            if(stones[i] === jewls[j]){
+
+                console.log(" i : " + stones[i] + " J : ", + jewls[j])
+                count++
+            }
+        }
+    }
+
+    console.log("count : ", count)
+
+}
+
+jewlsInAStone()
+
+
+
+
 //************************** find word containing charechters **************************************
 
 const words = ["abc", "bcd", "aaa", "cbc"]      // o/p = [0, 1]
@@ -22,7 +50,7 @@ const findWord = () => {
 
 }
 
-findWord()
+// findWord()
 
 
 //**************************/ length of last word **************************************
