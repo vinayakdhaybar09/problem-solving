@@ -1,3 +1,79 @@
+//************************** 3541. find most frequent vowel and consoneant **************************************
+
+const vowels = ["a","e", "i", "o", "u"]
+
+
+const value = "aeiaeia"
+
+const maxFreqSum = () =>{
+
+    const freq = {}
+
+    for(let i = 0; i < value.length; i++){
+        if(freq[value[i]]){
+            freq[value[i]]++
+        }else{
+            freq[value[i]] = 1
+        }
+    }
+
+    console.log("freq :",freq)
+
+    let vowelMax = 0
+    let cononentsMax = 0
+
+
+    for (const key in freq) {
+        let isVowel = false;
+
+        for (let i = 0; i < vowels.length; i++) {
+            if (vowels[i] === key) {
+                isVowel = true;
+                break;
+            }
+        }
+
+        if (isVowel) {
+            if (freq[key] > vowelMax) {
+                vowelMax = freq[key];
+            }
+        } else {
+            if (freq[key] > cononentsMax) {
+                cononentsMax = freq[key];
+            }
+        }
+    }
+
+    // Object.keys(freq).forEach((key)=>{
+
+    //     if (vowels.includes(key)) {
+    //         if (freq[key] > vowelMax) {
+    //             vowelMax = freq[key]
+    //         }
+    //     } else {
+    //         if (freq[key] > cononentsMax) {
+    //             cononentsMax = freq[key]
+    //         }
+    //     }
+    // })
+
+    console.log("vowelMax :", vowelMax)
+    console.log("cononentsMax :", cononentsMax)
+    return vowelMax + cononentsMax
+
+
+
+}
+// maxFreqSum()
+
+
+// const obj = {j : 2, b: 2, h: 5}
+
+// console.log(obj["j"])
+
+
+
+
 //************************** 771. jewels and stones **************************************
 
 const jewls = "aA"
