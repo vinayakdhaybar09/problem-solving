@@ -21,7 +21,7 @@ const jewlsInAStone = ()=>{
 
 }
 
-jewlsInAStone()
+// jewlsInAStone()
 
 
 
